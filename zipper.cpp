@@ -9,7 +9,7 @@ Zipper::Zipper(FilePool &filePool, ZippedBufferPool &zippedBufferPool):
 void Zipper::run()
 {
     QString filename;
-    filename = filePool_.tryGetFile();
+    filename = filePool_.tryGetFile();    
     // Tant qu'il y a des fichiers dans le pool
     while(filename != "") {
         // compresse le fichier
@@ -17,7 +17,7 @@ void Zipper::run()
         // essaye de prendre un autre fichier
         // à traiter
         filename = filePool_.tryGetFile();
-    }
+    }    
 }
 
 
@@ -25,17 +25,12 @@ void Zipper::compressFile(const QString &file_name)
 {
     QFile file(file_name);   
     if (file.open(QFile::ReadOnly) == true)
-    {
-        QDataStream stream(&file);
-        ZippedBuffer* zippedBuffer = new ZippedBuffer(getRelativePath(file_name));
-        zippedBuffer->write(stream);
+    {        
+        ZippedBuffer zippedBuffer;
+        zippedBuffer.setRelativePath(getRelativePath(file_name));
+        zippedBuffer.setCompressedData((qCompress(file.readAll())));
         zpPool_.put(zippedBuffer);
     }
-
-        compressedData = (file.readAll());
-
-
-    //zpPool_.put(zippedBuffer);
 }
 
 QString Zipper::getRelativePath(const QString &file_name)

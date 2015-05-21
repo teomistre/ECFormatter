@@ -1,18 +1,27 @@
 #include "zippedbuffer.h"
 #include <QDataStream>
 
-ZippedBuffer::ZippedBuffer(const QString &relativeFilePath, const QByteArray &compressedData):
-    relativeFilePath_(relativeFilePath),compressedData_(compressedData)
+ZippedBuffer::ZippedBuffer()
 {
 }
 
-
-ZippedBuffer::write(QDataStream &stream)
+void ZippedBuffer::setRelativePath(const QString &relativePath)
 {
-    while(stream.atEnd() == false)
-    {
+    this->relativeFilePath_ = relativePath;
+}
 
-        stream.readRawData(_, QIODevice::ReadOnly);
-    }
+void ZippedBuffer::setCompressedData(QByteArray &compressedData)
+{
+    this->compressedData_ = compressedData;
+}
 
+void ZippedBuffer::write(QDataStream &stream)
+{
+    stream << relativeFilePath_ << compressedData_;
+}
+
+void ZippedBuffer::read(QDataStream &stream)
+{
+    // this->setRelativePath(stream.operator >>());
+    // this->setCompressedData(stream.operator >>());
 }

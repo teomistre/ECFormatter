@@ -19,10 +19,14 @@ SOURCES += main.cpp \
     filepool.cpp \
     zipper.cpp \
     zippedbuffer.cpp \
-    zippedbufferpool.cpp
+    zippedbufferpool.cpp \
+    writer.cpp \
+    epsifilecompressor.cpp
 
 HEADERS += \
     filepool.h \
     zipper.h \
     zippedbuffer.h \
-    zippedbufferpool.h
+    zippedbufferpool.h \
+    writer.h \
+    epsifilecompressor.h

@@ -7,6 +7,8 @@ class ZippedBuffer
 {
 public:
     ZippedBuffer();
+    void setRelativePath(const QString &relativePath);
+    void setCompressedData(QByteArray &compressedData);
     void write(QDataStream &stream);
     void read(QDataStream &stream);
 private:

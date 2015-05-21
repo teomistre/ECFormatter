@@ -11,11 +11,13 @@ public:
     ZippedBufferPool();
     void put(ZippedBuffer &zb);
     QPair<bool,ZippedBuffer> tryGet();
+    void setDone();
     bool done();
 private:
+    bool filePoolIsDone_;
     QMutex mutex_;
     QWaitCondition condition_;
-    QList<ZippedBuffer *> _zippedBuffers;
+    QList<ZippedBuffer> _zippedBuffers;
 };
 
 #endif // ZIPPEDBUFFERPOOL_H
