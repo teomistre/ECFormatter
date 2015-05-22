@@ -9,19 +9,20 @@
 
 using namespace std;
 
-EpsiFileCompressor::EpsiFileCompressor(const int &nbThreads)
+EpsiFileCompressor::EpsiFileCompressor(const int &nbThreads):
+    nbThreads_(nbThreads)
 {
 }
 
-EpsiFileCompressor::compress(const QString &folder, const QString ecfFileName)
+void EpsiFileCompressor::compress(const QString &folder, const QString &ecfFileName)
 {
     FilePool filePool(folder);
     ZippedBufferPool zbPool;
     typedef unique_ptr<Zipper> ZipperPtr;
     list<ZipperPtr> zippers;
-    Writer writer;
+    Writer writer(zbPool,ecfFileName);
 
-    for(int i = 0;i < nbThreads;++i)
+    for(int i = 0;i < nbThreads_;++i)
     {
        auto ptr = new Zipper(filePool, zbPool);
        zippers.push_back(ZipperPtr(ptr));
@@ -38,7 +39,7 @@ EpsiFileCompressor::compress(const QString &folder, const QString ecfFileName)
     writer.wait();
 }
 
-EpsiFileCompressor::uncompress(const QString &ecfFileName, const QString &folder)
+void EpsiFileCompressor::uncompress(const QString &ecfFileName, const QString &folder)
 {
 
 }
