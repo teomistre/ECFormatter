@@ -8,9 +8,10 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     //QCoreApplication a(argc, argv);
-    EpsiFileCompressor efc(2);
-    QString folder = "D:\\Theo\\CV";
-    QString file = "D:\\Theo\\cv.ecf";
+    EpsiFileCompressor efc(4);
+    //QString folder = "D:\\Theo\\CV";
+    QString folder = "D:\\Theo\\BackUps\\BackUpOldSys\\C#";
+    QString file = "D:\\Theo\\c#.ecf";
     efc.compress(folder,file);
 
     return 0;

@@ -9,6 +9,7 @@ void ZippedBufferPool::put(ZippedBuffer &zb)
 {
     QMutexLocker locker(&mutex_);
     this->_zippedBuffers.append(zb);
+    condition_.wakeOne();
 }
 
 QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
@@ -29,6 +30,13 @@ QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
         {
             //QWaitCondition
             condition_.wait(&mutex_);
+            if (_zippedBuffers.isEmpty() == false)
+            {
+                pair.first = true;
+                pair.second = _zippedBuffers.front();
+                _zippedBuffers.pop_front();
+            }
+            //vérifier s'il y un élément
         }
     }
     return pair;
@@ -37,6 +45,7 @@ QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
 void ZippedBufferPool::setDone()
 {
     this->filePoolIsDone_ = true;
+    condition_.wakeAll();
 }
 
 bool ZippedBufferPool::done()
