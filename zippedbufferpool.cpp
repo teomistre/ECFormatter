@@ -15,6 +15,7 @@ QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
 {
     ZippedBuffer emptyBuffer;
     QPair<bool,ZippedBuffer> pair(false,emptyBuffer);
+
     QMutexLocker locker(&mutex_);
     if (_zippedBuffers.isEmpty() == false)
     {
@@ -27,6 +28,7 @@ QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
         if (!done())
         {
             //QWaitCondition
+            condition_.wait(&mutex_);
         }
     }
     return pair;

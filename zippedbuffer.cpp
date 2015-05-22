@@ -22,6 +22,14 @@ void ZippedBuffer::write(QDataStream &stream)
 
 void ZippedBuffer::read(QDataStream &stream)
 {
-    // this->setRelativePath(stream.operator >>());
-    // this->setCompressedData(stream.operator >>());
+    while(!stream.atEnd())
+    {
+       // ZippedBuffer zippedBuffer;
+       // QString relativePath;
+       // QByteArray datas;
+       // relativePath << stream.readRawData();
+       // datas << stream;
+       // zippedBuffer.setRelativePath(relativePath);
+       // zippedBuffer.setCompressedData(datas);
+    }
 }
