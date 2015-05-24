@@ -33,7 +33,7 @@ public:
      * @note Cette méthode est thread-safe
      */
     QString tryGetFile() ;
-    QString folderPath_;
+    QString getFolderPath();
 private:
     /**
      * @brief findFileInFolderAndSubfolders initialise le pool en parcourant récurcivement
@@ -49,6 +49,8 @@ private:
      * @brief mutex_ utilsé lors de l'accés à files_
      */
     QMutex mutex_;
+
+    QString folderPath_;
 
 
 };

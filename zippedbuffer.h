@@ -9,6 +9,8 @@ public:
     ZippedBuffer();
     void setRelativePath(const QString &relativePath);
     void setCompressedData(QByteArray &compressedData);
+    QString getRelativePath();
+    QByteArray getByteArray();
     void write(QDataStream &stream);
     void read(QDataStream &stream);
 private:

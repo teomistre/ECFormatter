@@ -2,14 +2,15 @@
 #include <QDir>
 #include <QMutexLocker>
 
-FilePool::FilePool(const QString &folder)
+FilePool::FilePool(const QString &folder):
+    folderPath_(folder)
 {
     findFileInFolderAndSubfolders(folder);
 }
 void FilePool::findFileInFolderAndSubfolders(const QString &folder)
 {
     QDir dir(folder);
-    folderPath_ = dir.absolutePath();
+    //folderPath_ = dir.absolutePath();
     // list all the entries of the current folder
     foreach (const QFileInfo &entry,
              dir.entryInfoList(QDir::AllEntries | QDir::NoDotAndDotDot)) {
@@ -43,4 +44,9 @@ QString FilePool::tryGetFile() {
     // A la destruction de locker, les autres
     // threads pourront à nouveau essayer d'exécuter
     // ce code.
+}
+
+QString FilePool::getFolderPath()
+{
+    return folderPath_;
 }

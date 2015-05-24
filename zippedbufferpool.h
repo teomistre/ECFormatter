@@ -2,8 +2,9 @@
 #define ZIPPEDBUFFERPOOL_H
 #include <QPair>
 #include <QWaitCondition>
-#include "zippedbuffer.h"
+#include <QMutex>
 #include <QListData>
+#include "zippedbuffer.h"
 
 class ZippedBufferPool
 {

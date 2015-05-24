@@ -21,7 +21,8 @@ SOURCES += main.cpp \
     zippedbuffer.cpp \
     zippedbufferpool.cpp \
     writer.cpp \
-    epsifilecompressor.cpp
+    epsifilecompressor.cpp \
+    unzipper.cpp
 
 HEADERS += \
     filepool.h \
@@ -29,4 +30,5 @@ HEADERS += \
     zippedbuffer.h \
     zippedbufferpool.h \
     writer.h \
-    epsifilecompressor.h
+    epsifilecompressor.h \
+    unzipper.h

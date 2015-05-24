@@ -4,6 +4,7 @@
 #include "zippedbufferpool.h"
 #include "zipper.h"
 #include "writer.h"
+#include "unzipper.h"
 #include <memory>
 #include <list>
 
@@ -41,5 +42,33 @@ void EpsiFileCompressor::compress(const QString &folder, const QString &ecfFileN
 
 void EpsiFileCompressor::uncompress(const QString &ecfFileName, const QString &folder)
 {
+       ZippedBufferPool zbPool;
+       QFile file(ecfFileName);
+       if (file.open(QFile::ReadOnly) == true)
+       {
+           QDataStream stream(&file);
+           while(!stream.atEnd())
+           {
+               ZippedBuffer zb;
+               zb.read(stream);
+               zbPool.put(zb);
+           }
+           zbPool.setDone();
+       }
+
+       typedef unique_ptr<Unzipper> UnzipperPtr;
+       list<UnzipperPtr> unzippers;
+
+       for(int i = 0;i < nbThreads_;++i)
+       {
+          auto ptr = new Unzipper(zbPool, folder);
+          unzippers.push_back(UnzipperPtr(ptr));
+          unzippers.back()->start();
+       }
+       while (!unzippers.empty()) {
+           unzippers.front()->wait();
+           unzippers.pop_front();
+       }
+
 
 }

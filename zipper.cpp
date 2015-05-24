@@ -1,5 +1,6 @@
 #include "zipper.h"
 #include <QFile>
+#include <QDebug>
 
 Zipper::Zipper(FilePool &filePool, ZippedBufferPool &zippedBufferPool):
     filePool_(filePool), zpPool_(zippedBufferPool)
@@ -35,12 +36,9 @@ void Zipper::compressFile(const QString &file_name)
 
 QString Zipper::getRelativePath(const QString &file_name)
 {
-    //TODO TD : prendre le folderPath dans le constructeur de la classe..
-    QString directoryPath = filePool_.folderPath_;
-    QString result;
-    if(file_name.contains(directoryPath))
-    {
-        result = file_name.right(directoryPath.length());
-    }
+    QString result = file_name;
+    result.replace('/','\\');
+    result.replace(filePool_.getFolderPath(),"");
+    //qDebug() << result;
     return result;
 }
