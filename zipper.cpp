@@ -40,5 +40,6 @@ QString Zipper::getRelativePath(const QString &file_name)
     result.replace('/','\\');
     result.replace(filePool_.getFolderPath(),"");
     //qDebug() << result;
+
     return result;
 }

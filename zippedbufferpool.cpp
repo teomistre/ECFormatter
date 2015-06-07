@@ -27,8 +27,7 @@ QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
     else
     {
         if (!done())
-        {
-            //QWaitCondition
+        {            
             condition_.wait(&mutex_);
             if (_zippedBuffers.isEmpty() == false)
             {
@@ -36,7 +35,6 @@ QPair<bool,ZippedBuffer> ZippedBufferPool::tryGet()
                 pair.second = _zippedBuffers.front();
                 _zippedBuffers.pop_front();
             }
-            //vérifier s'il y un élément
         }
     }
     return pair;

@@ -29,7 +29,7 @@ QString ZippedBuffer::getRelativePath()
 {
     return relativeFilePath_;
 }
-QByteArray ZippedBuffer::getByteArray()
+QByteArray ZippedBuffer::getCompressedDatas()
 {
     return compressedData_;
 }

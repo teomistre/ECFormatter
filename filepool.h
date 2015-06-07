@@ -4,52 +4,54 @@
 #include <QStringList>
 #include <QMutex>
 /**
- * @brief La class FilePool représente un ensemble de
- * fichier à traiter.
+ * @brief The FilePool class represents group
+ * of files to compress
  */
 class FilePool
 {
 public:
     /**
-     * @brief FilePool contruit un nouveau pool en l'initialisant
-     * la liste des fichiers à partir du répertoire donné. Uniquement
-     * les fichiers ayant le suffix passé sont ajoutés dans le pool.
-     * Dès qu'il est construit, le pool peut être utilisé.
-     * @param folder répertoire à partir duquel les fichiers sont recherchés
-     * @param suffix des fichiers devant être ajoutés dans le pool
+     * @brief FilePool is lising all the file of the folder and all subfolders/files
+     * @param folder from the files are listed
      */
     FilePool(const QString &folder);
     /**
-     * @brief count retourne le nombre de fichiers restant dans le pool
-     * @return
-     * @note Cette méthode est thread-safe
+     * @brief count the number of file in the pool
+     * @return the number of file in the pool
+     * @note This method is thread safe
      */
     int count();
     /**
-     * @brief tryGetFile permet de récupérer le nom d'un fichier. Si il n'y a
-     * plus de fichiers, cette méthode retourne une chaine vide. Le nom de fichier
-     * retourné est supprimé du pool.
-     * @return Un nom de fichier ou une chaine vide
-     * @note Cette méthode est thread-safe
+     * @brief tryGetFile try to return a filename or an
+     * empty string if none avalaible.
+     * @return the file name or an empty string
+     * @note This method is thread safe
      */
     QString tryGetFile() ;
+    /**
+     * @brief getFolderPath the folder path used for pooling
+     * @return the folder path
+     */
     QString getFolderPath();
 private:
     /**
-     * @brief findFileInFolderAndSubfolders initialise le pool en parcourant récurcivement
-     * le répertoire et les sous répertoires
-     * @param folder le répertoire à parcourir
+     * @brief findFileInFolderAndSubfolders initialize pool by indexing
+     * recursivly folders and subfolders
+     * @param folder to explore
      */
     void findFileInFolderAndSubfolders(const QString &folder);
     /**
-     * @brief files_ liste des fichiers contenu dans le pool
+     * @brief files_ list of the files contained in the pool
      */
     QStringList files_;
     /**
-     * @brief mutex_ utilsé lors de l'accés à files_
+     * @brief mutex_ used for accessing files
      */
     QMutex mutex_;
 
+    /**
+     * @brief folderPath_ the folder to start indexing files
+     */
     QString folderPath_;
 
 

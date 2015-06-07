@@ -26,9 +26,9 @@ void Unzipper::uncompressFile(ZippedBuffer &zb)
 {
     QString relativPath = zb.getRelativePath();
     QString absolutePath = getAbsolutePath(relativPath);
-    qDebug() << "path : " <<absolutePath;
+    //qDebug() << "path : " <<absolutePath;
     makePath(absolutePath);
-    QByteArray uncompressedData = qUncompress(zb.getByteArray());
+    QByteArray uncompressedData = qUncompress(zb.getCompressedDatas());
     QFile file(absolutePath);
     if (file.open(QIODevice::ReadWrite))
     {

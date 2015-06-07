@@ -7,6 +7,7 @@
 #include "unzipper.h"
 #include <memory>
 #include <list>
+#include <QDebug>
 
 using namespace std;
 
@@ -18,6 +19,7 @@ EpsiFileCompressor::EpsiFileCompressor(const int &nbThreads):
 void EpsiFileCompressor::compress(const QString &folder, const QString &ecfFileName)
 {
     FilePool filePool(folder);
+    qDebug() << folder;
     ZippedBufferPool zbPool;
     typedef unique_ptr<Zipper> ZipperPtr;
     list<ZipperPtr> zippers;
@@ -36,7 +38,6 @@ void EpsiFileCompressor::compress(const QString &folder, const QString &ecfFileN
         zippers.pop_front();
     }
     zbPool.setDone();
-
     writer.wait();
 }
 
