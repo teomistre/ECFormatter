@@ -7,7 +7,7 @@
 QT       += core
 
 QT       -= gui
-
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = ECFormatter
 CONFIG   += console
 CONFIG   -= app_bundle
@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     zippedbufferpool.cpp \
     writer.cpp \
     epsifilecompressor.cpp \
-    unzipper.cpp
+    unzipper.cpp \
+    tabwidget.cpp
 
 HEADERS += \
     filepool.h \
@@ -31,4 +32,8 @@ HEADERS += \
     zippedbufferpool.h \
     writer.h \
     epsifilecompressor.h \
-    unzipper.h
+    unzipper.h \
+    tabwidget.h
+
+FORMS += \
+    tabwidget.ui

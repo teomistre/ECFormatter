@@ -26,6 +26,18 @@ public:
      * @param folder where to uncompress the content of the ecf file
      */
     void uncompress(const QString &ecfFileName, const QString &folder);
+
+    /**
+     * @brief get the number of threads
+     * @return nbThreads_
+     */
+    int nbThreads() const;
+    /**
+     * @brief set the number of threads
+     * @param number of thread
+     */
+    void setNbThreads(int nbThreads);
+
 private:
     /**
      * @brief nbThreads_ the number of threads used during execution

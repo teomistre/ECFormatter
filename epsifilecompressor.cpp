@@ -20,6 +20,7 @@ void EpsiFileCompressor::compress(const QString &folder, const QString &ecfFileN
 {
     FilePool filePool(folder);
     qDebug() << folder;
+    qDebug() << "nbTrheads" << nbThreads_;
     ZippedBufferPool zbPool;
     typedef unique_ptr<Zipper> ZipperPtr;
     list<ZipperPtr> zippers;
@@ -43,6 +44,7 @@ void EpsiFileCompressor::compress(const QString &folder, const QString &ecfFileN
 
 void EpsiFileCompressor::uncompress(const QString &ecfFileName, const QString &folder)
 {
+     qDebug() << "nbTrheads" << nbThreads_;
        ZippedBufferPool zbPool;
        QFile file(ecfFileName);
        if (file.open(QFile::ReadOnly) == true)
@@ -73,3 +75,13 @@ void EpsiFileCompressor::uncompress(const QString &ecfFileName, const QString &f
 
 
 }
+int EpsiFileCompressor::nbThreads() const
+{
+    return nbThreads_;
+}
+
+void EpsiFileCompressor::setNbThreads(int nbThreads)
+{
+    nbThreads_ = nbThreads;
+}
+
