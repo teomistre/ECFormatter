@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['unzipper',['Unzipper',['../class_unzipper.html',1,'']]]
+  ['tabwidget',['TabWidget',['../class_tab_widget.html',1,'']]]
 ];

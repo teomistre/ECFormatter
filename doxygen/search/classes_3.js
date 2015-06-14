@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['writer',['Writer',['../class_writer.html',1,'']]]
+  ['unzipper',['Unzipper',['../class_unzipper.html',1,'']]]
 ];

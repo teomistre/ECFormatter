@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['uncompress',['uncompress',['../class_epsi_file_compressor.html#a562a22a05c850870192dd78e0954c8c3',1,'EpsiFileCompressor']]],
-  ['unzipper',['Unzipper',['../class_unzipper.html#a4eb65001cda6ea06ace2a791790cffb9',1,'Unzipper']]]
+  ['tryget',['tryGet',['../class_zipped_buffer_pool.html#a917f556fb4c7615067515570cebf9bb6',1,'ZippedBufferPool']]],
+  ['trygetfile',['tryGetFile',['../class_file_pool.html#a520090a5679eb3270186dbec0c84c204',1,'FilePool']]]
 ];

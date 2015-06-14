@@ -24,9 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ECFormatter
-   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Compress/Uncompress files using .ecf format</div>
   </td>
  </tr>
  </tbody>
@@ -99,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a263cdeb650b1f9e6aa58a4e09ad46c44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_epsi_file_compressor.html#a263cdeb650b1f9e6aa58a4e09ad46c44">EpsiFileCompressor</a> (const int &amp;nbThreads)</td></tr>
+<tr class="memitem:a263cdeb650b1f9e6aa58a4e09ad46c44"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_epsi_file_compressor.html#a263cdeb650b1f9e6aa58a4e09ad46c44">EpsiFileCompressor</a> (const int &amp;<a class="el" href="class_epsi_file_compressor.html#a8e85162fed9b783daabbaffd48bb8de2">nbThreads</a>)</td></tr>
 <tr class="memdesc:a263cdeb650b1f9e6aa58a4e09ad46c44"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_epsi_file_compressor.html" title="The EpsiFileCompressor class used to (un)compress the file/folder. ">EpsiFileCompressor</a> expose the main method to compress or uncompress files and folder. The number of thread used by the program must be set in the constructor of the file.  <a href="#a263cdeb650b1f9e6aa58a4e09ad46c44">More...</a><br /></td></tr>
 <tr class="separator:a263cdeb650b1f9e6aa58a4e09ad46c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a709c3f9f6276ac0a6f45dbe878e7bec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_epsi_file_compressor.html#a709c3f9f6276ac0a6f45dbe878e7bec3">compress</a> (const QString &amp;folder, const QString &amp;ecfFileName)</td></tr>
@@ -108,6 +106,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a562a22a05c850870192dd78e0954c8c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_epsi_file_compressor.html#a562a22a05c850870192dd78e0954c8c3">uncompress</a> (const QString &amp;ecfFileName, const QString &amp;folder)</td></tr>
 <tr class="memdesc:a562a22a05c850870192dd78e0954c8c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">uncompress the .ecf file into a specific folder  <a href="#a562a22a05c850870192dd78e0954c8c3">More...</a><br /></td></tr>
 <tr class="separator:a562a22a05c850870192dd78e0954c8c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e85162fed9b783daabbaffd48bb8de2"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_epsi_file_compressor.html#a8e85162fed9b783daabbaffd48bb8de2">nbThreads</a> () const </td></tr>
+<tr class="memdesc:a8e85162fed9b783daabbaffd48bb8de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the number of threads  <a href="#a8e85162fed9b783daabbaffd48bb8de2">More...</a><br /></td></tr>
+<tr class="separator:a8e85162fed9b783daabbaffd48bb8de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d89d1f1bf9015d4a4bf25a03a99028d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_epsi_file_compressor.html#a4d89d1f1bf9015d4a4bf25a03a99028d">setNbThreads</a> (int <a class="el" href="class_epsi_file_compressor.html#a8e85162fed9b783daabbaffd48bb8de2">nbThreads</a>)</td></tr>
+<tr class="memdesc:a4d89d1f1bf9015d4a4bf25a03a99028d"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the number of threads  <a href="#a4d89d1f1bf9015d4a4bf25a03a99028d">More...</a><br /></td></tr>
+<tr class="separator:a4d89d1f1bf9015d4a4bf25a03a99028d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The <a class="el" href="class_epsi_file_compressor.html" title="The EpsiFileCompressor class used to (un)compress the file/folder. ">EpsiFileCompressor</a> class used to (un)compress the file/folder. </p>
@@ -172,6 +176,48 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a class="anchor" id="a8e85162fed9b783daabbaffd48bb8de2"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int EpsiFileCompressor::nbThreads </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>get the number of threads </p>
+<dl class="section return"><dt>Returns</dt><dd>nbThreads_ </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a4d89d1f1bf9015d4a4bf25a03a99028d"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void EpsiFileCompressor::setNbThreads </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>nbThreads</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>set the number of threads </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">number</td><td>of thread </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a class="anchor" id="a562a22a05c850870192dd78e0954c8c3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +260,7 @@ Public Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2015 16:06:15 for ECFormatter by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 14 2015 13:56:10 for ECFormatter by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

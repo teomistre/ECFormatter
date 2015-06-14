@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['setcompresseddata',['setCompressedData',['../class_zipped_buffer.html#a72b79ee7e3829915eaeac667b18edc64',1,'ZippedBuffer']]],
-  ['setdone',['setDone',['../class_zipped_buffer_pool.html#aeb64bec06c54eb7b268323bf9d60699d',1,'ZippedBufferPool']]],
-  ['setrelativepath',['setRelativePath',['../class_zipped_buffer.html#a278348c032723f151ec0ff41edc4d7c8',1,'ZippedBuffer']]]
+  ['read',['read',['../class_zipped_buffer.html#add8f4952774a5d1987642be100d2f3f7',1,'ZippedBuffer']]],
+  ['run',['run',['../class_unzipper.html#a944444cb50d895056181adb856841def',1,'Unzipper::run()'],['../class_writer.html#a831f640296e4534fe5f31097fcb0712b',1,'Writer::run()'],['../class_zipper.html#a17e7eb33d4588234dc47d24cbd0d6c09',1,'Zipper::run()']]]
 ];

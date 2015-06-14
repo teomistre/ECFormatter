@@ -24,9 +24,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">ECFormatter
-   &#160;<span id="projectnumber">1.0</span>
    </div>
-   <div id="projectbrief">Compress/Uncompress files using .ecf format</div>
   </td>
  </tr>
  </tbody>
@@ -95,22 +93,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_epsi_file_compressor.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_epsi_file_compressor.html">EpsiFileCompressor</a></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_epsi_file_compressor.html#a263cdeb650b1f9e6aa58a4e09ad46c44">EpsiFileCompressor</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;nbThreads);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_epsi_file_compressor.html#a263cdeb650b1f9e6aa58a4e09ad46c44">EpsiFileCompressor</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;<a class="code" href="class_epsi_file_compressor.html#a8e85162fed9b783daabbaffd48bb8de2">nbThreads</a>);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_epsi_file_compressor.html#a709c3f9f6276ac0a6f45dbe878e7bec3">compress</a>(<span class="keyword">const</span> QString &amp;folder, <span class="keyword">const</span> QString &amp;ecfFileName);</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_epsi_file_compressor.html#a562a22a05c850870192dd78e0954c8c3">uncompress</a>(<span class="keyword">const</span> QString &amp;ecfFileName, <span class="keyword">const</span> QString &amp;folder);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> nbThreads_;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;};</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif // EPSIFILECOMPRESSOR_H</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_epsi_file_compressor.html#a8e85162fed9b783daabbaffd48bb8de2">nbThreads</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_epsi_file_compressor.html#a4d89d1f1bf9015d4a4bf25a03a99028d">setNbThreads</a>(<span class="keywordtype">int</span> nbThreads);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">int</span> nbThreads_;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="preprocessor">#endif // EPSIFILECOMPRESSOR_H</span></div>
 <div class="ttc" id="class_epsi_file_compressor_html_a263cdeb650b1f9e6aa58a4e09ad46c44"><div class="ttname"><a href="class_epsi_file_compressor.html#a263cdeb650b1f9e6aa58a4e09ad46c44">EpsiFileCompressor::EpsiFileCompressor</a></div><div class="ttdeci">EpsiFileCompressor(const int &amp;nbThreads)</div><div class="ttdoc">EpsiFileCompressor expose the main method to compress or uncompress files and folder. The number of thread used by the program must be set in the constructor of the file. </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.cpp:14</div></div>
-<div class="ttc" id="class_epsi_file_compressor_html_a562a22a05c850870192dd78e0954c8c3"><div class="ttname"><a href="class_epsi_file_compressor.html#a562a22a05c850870192dd78e0954c8c3">EpsiFileCompressor::uncompress</a></div><div class="ttdeci">void uncompress(const QString &amp;ecfFileName, const QString &amp;folder)</div><div class="ttdoc">uncompress the .ecf file into a specific folder </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.cpp:44</div></div>
+<div class="ttc" id="class_epsi_file_compressor_html_a562a22a05c850870192dd78e0954c8c3"><div class="ttname"><a href="class_epsi_file_compressor.html#a562a22a05c850870192dd78e0954c8c3">EpsiFileCompressor::uncompress</a></div><div class="ttdeci">void uncompress(const QString &amp;ecfFileName, const QString &amp;folder)</div><div class="ttdoc">uncompress the .ecf file into a specific folder </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.cpp:45</div></div>
 <div class="ttc" id="class_epsi_file_compressor_html_a709c3f9f6276ac0a6f45dbe878e7bec3"><div class="ttname"><a href="class_epsi_file_compressor.html#a709c3f9f6276ac0a6f45dbe878e7bec3">EpsiFileCompressor::compress</a></div><div class="ttdeci">void compress(const QString &amp;folder, const QString &amp;ecfFileName)</div><div class="ttdoc">compress in chage of compression of the folder into an .ecf file </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.cpp:19</div></div>
 <div class="ttc" id="class_epsi_file_compressor_html"><div class="ttname"><a href="class_epsi_file_compressor.html">EpsiFileCompressor</a></div><div class="ttdoc">The EpsiFileCompressor class used to (un)compress the file/folder. </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.h:7</div></div>
+<div class="ttc" id="class_epsi_file_compressor_html_a8e85162fed9b783daabbaffd48bb8de2"><div class="ttname"><a href="class_epsi_file_compressor.html#a8e85162fed9b783daabbaffd48bb8de2">EpsiFileCompressor::nbThreads</a></div><div class="ttdeci">int nbThreads() const </div><div class="ttdoc">get the number of threads </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.cpp:78</div></div>
+<div class="ttc" id="class_epsi_file_compressor_html_a4d89d1f1bf9015d4a4bf25a03a99028d"><div class="ttname"><a href="class_epsi_file_compressor.html#a4d89d1f1bf9015d4a4bf25a03a99028d">EpsiFileCompressor::setNbThreads</a></div><div class="ttdeci">void setNbThreads(int nbThreads)</div><div class="ttdoc">set the number of threads </div><div class="ttdef"><b>Definition:</b> epsifilecompressor.cpp:83</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Jun 7 2015 16:06:15 for ECFormatter by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 14 2015 13:56:10 for ECFormatter by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>
