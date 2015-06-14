@@ -40,14 +40,6 @@ void TabWidget::on_folderToCompress_clicked()
 
 }
 
-void TabWidget::validateFolder() {
-
-}
-
-void TabWidget::selectFolder() {
-
-
-}
 
 const QDir &TabWidget::currentFolder()const {
     return currentFolder_;
@@ -74,6 +66,9 @@ void TabWidget::on_pushButton_clicked()
     QString folderSource(ui->folderSource->text());
     QString fileCompress(ui->locationFileCompress->text());
     efc_.compress(folderSource,fileCompress);
+    QMessageBox msgBox;
+    msgBox.setText("Compression terminée.");
+    msgBox.exec();
 }
 
 void TabWidget::on_selectFileEcf_clicked()
@@ -112,6 +107,9 @@ void TabWidget::on_uncompress_clicked()
     QString fileName(ui->fileECF->text());
     QString folderUnCompress(ui->folderUncompress->text());
     efc_.uncompress(fileName,folderUnCompress);
+    QMessageBox msgBox;
+    msgBox.setText("Déompression terminée.");
+    msgBox.exec();
 }
 
 void TabWidget::on_spinBox_valueChanged(int nbThread)
